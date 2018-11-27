@@ -7,9 +7,31 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'NativeInput';
-  imageSource = 'assets/cri.png';
+  imageSource: string;
+  imgBlock: boolean;
 
-  processImage() {
-    console.log('Image Upload');
+  processImage(event: Event) {
+    /*
+    let uploadedImage = fileRef.files[0];
+    let newImageUrl = URL.createObjectURL(uploadedImage);
+    */
+   /*const imgFile = e.target.files[0];
+   const newImageUrl = URL.createObjectURL(imgFile);
+   console.log(imgFile);*/
+
+
+    if (event.target.files && event.target.files[0]) {
+      const file = event.target.files[0];
+
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        this.imgBlock = true;
+        this.imageSource = reader.result;
+      }
+
+      reader.readAsDataURL(file);
+    }
+
+
   }
 }
