@@ -4,27 +4,50 @@
 
 
 <div class="container-fluid">
-  <div class="row justify-content-center">
+  <div class="row justify-content-center mb-2">
       <div class="col-12 col-sm-12 col-md-6">
         <div class="card">
-          <div class="card-header h6 mb-0">React Native Input - File Upload</div>
+          <div class="card-header h6 mb-0">React Native Input - Image Upload</div>
           
           <div class="card-body make-center" style="height:6rem;">
             <form>
               <div class="form-group">
                 <label style="cursor: pointer;" class="bg-secondary text-white form-control form-control-lg">Upload Image
-                  <input style="display: none;" (change)="processImage($event)"  accept="image/*" multiple type="file" class="form-control-file" >
+                  <input style="display: none;" (change)="processImage($event, 1)"  accept="image/*" multiple type="file" class="form-control-file" >
                 </label>     
               </div>
             </form>
           </div>
 
-          <div class="card-body make-center" *ngIf="imgBlock">
-              <img [src]="imageSource" style="height:100px;">
+          <div class="card-body make-center" *ngIf="imgBlock1">
+              <img [src]="imageSource1" style="height:100px;">
           </div>
 
-          <div class="card-footer" style="font-size:small;">Reference implementation</div>
+          <div class="card-footer" style="font-size:xx-small;">Reference implementation</div>
         </div>    
       </div>
+  </div>
+
+
+  <div class="row justify-content-center mb-2">
+    <div class="col-12 col-sm-12 col-md-6">
+      <div class="card">
+        <div class="card-header h6 mb-0">React Native Input - File Upload</div>
+        
+        <div class="card-body make-center" style="height:6rem;">
+          <form>
+            <div class="form-group">
+              <input  (change)="processImage($event, 2)"  accept="image/*" multiple type="file" class="form-control-file" >
+            </div>
+          </form>
+        </div>
+
+        <div class="card-body make-center" *ngIf="imgBlock2">
+            <img [src]="imageSource2" style="height:100px;">
+        </div>
+
+        <div class="card-footer" style="font-size:xx-small;">Reference implementation</div>
+      </div>    
+    </div>
   </div>
 </div>
