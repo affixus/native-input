@@ -7,19 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'NativeInput';
-  imageSource: string;
+  imageSource: any;
   imgBlock: boolean;
 
   processImage(event: Event) {
-    /*
-    let uploadedImage = fileRef.files[0];
-    let newImageUrl = URL.createObjectURL(uploadedImage);
-    */
-   /*const imgFile = e.target.files[0];
-   const newImageUrl = URL.createObjectURL(imgFile);
-   console.log(imgFile);*/
-
-
     if (event.target.files && event.target.files[0]) {
       const file = event.target.files[0];
 
@@ -31,7 +22,7 @@ export class AppComponent {
 
       reader.readAsDataURL(file);
     }
-
-
   }
+
+
 }
