@@ -10,7 +10,7 @@ export class AppComponent {
   imageSource: any;
   imgBlock: boolean;
 
-  processImage(event: Event) {
+  processImage(event) {
     if (event.target.files && event.target.files[0]) {
       const file = event.target.files[0];
 
